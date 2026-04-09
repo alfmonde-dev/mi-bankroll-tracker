@@ -115,32 +115,40 @@ with col_der:
         resueltas = resueltas.sort_values(['Fecha', 'ID']) 
 
         if not resueltas.empty:
-            # Gráfica estilo Pro
+            # Preparar datos
             datos_grafica = resueltas.copy()
             datos_grafica['Eje_X'] = range(1, len(datos_grafica) + 1) 
             datos_grafica['Acumulado'] = datos_grafica['Beneficio_Neto'].cumsum()
 
+            # ---> AQUÍ ESTÁN LOS CAMBIOS PARA EMPEZAR EN 0 Y CURVAR MÁS <---
+            # Insertamos un 0 al principio de los ejes X e Y para que nazca de la base
+            x_vals = [0] + list(datos_grafica['Eje_X'])
+            y_vals = [0.0] + list(datos_grafica['Acumulado'])
+
             fig = go.Figure()
             fig.add_trace(go.Scatter(
-                x=datos_grafica['Eje_X'], y=datos_grafica['Acumulado'],
-                mode='lines+markers', line=dict(color='#2ad29a', width=3, shape='spline'),
-                fill='tozeroy', fillcolor='rgba(42, 210, 154, 0.1)'
+                x=x_vals, 
+                y=y_vals,
+                mode='lines+markers', 
+                # Añadido smoothing=1.3 para forzar una curva mucho más suave
+                line=dict(color='#2ad29a', width=3, shape='spline', smoothing=1.3),
+                fill='tozeroy', 
+                fillcolor='rgba(42, 210, 154, 0.1)'
             ))
             
-            # ---> AQUÍ ESTÁ EL CAMBIO PARA BLOQUEAR EL ZOOM <---
+            # Mantenemos los bloqueos para que no se vuelva loca al tocarla
             fig.update_layout(
                 template="plotly_dark", 
                 height=350, 
                 margin=dict(l=0,r=0,t=20,b=0),
-                xaxis=dict(fixedrange=True), # Bloquea el eje X
-                yaxis=dict(fixedrange=True), # Bloquea el eje Y
-                dragmode=False # Evita que se pueda arrastrar el fondo
+                xaxis=dict(fixedrange=True), 
+                yaxis=dict(fixedrange=True), 
+                dragmode=False 
             )
             
-            # El parámetro config={'displayModeBar': False} quita los botones de arriba a la derecha
             st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
 
-            # --- MÉTRICAS (Añadido Nº Apuestas) ---
+            # --- MÉTRICAS ---
             m1, m2, m3 = st.columns(3)
             m1.metric("Beneficio Periodo", f"{resueltas['Beneficio_Neto'].sum():.2f} €")
             m2.metric("Nº Apuestas", f"{len(resueltas)}")
@@ -168,7 +176,7 @@ with col_der:
         else:
             st.info("No hay datos cerrados en este periodo.")
 
-        # --- SISTEMA DE BORRADO (Tu versión original) ---
+        # --- SISTEMA DE BORRADO ---
         st.divider()
         st.markdown("🗑️ **Eliminar apuesta del sistema**")
         cd1, cd2 = st.columns([3, 1])
@@ -191,5 +199,7 @@ with col_der:
             if c_no.button("❌ No"):
                 st.session_state.confirmar_borrado = None
                 st.rerun()
+    else:
+        st.warning("Añade y cierra alguna apuesta.")
     else:
         st.warning("Añade y cierra alguna apuesta.")
