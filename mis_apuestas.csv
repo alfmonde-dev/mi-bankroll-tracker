@@ -1,0 +1,34 @@
+ID,Fecha,Evento,Cuota,Inversion,Estado,Retorno,Casa
+1,2026-02-12,Conjunto ,2.0,10.0,Ganada,20.0,Winamax
+2,2026-03-02,Conjunto ,2.0,10.0,Ganada,20.0,
+3,2026-03-04,Conjunto ,2.0,10.0,Ganada,20.0,
+4,2026-03-11,Conjunto ,2.0,5.0,Ganada,10.0,Winamax
+5,2026-03-11,Conjunto ,2.0,5.0,Perdida,0.0,
+6,2026-03-12,Conjunto ,2.0,10.0,Ganada,20.0,
+7,2026-03-12,Conjunto ,2.0,10.0,Ganada,20.0,
+8,2026-03-20,Conjunto ,2.0,10.0,Ganada,20.0,
+9,2026-03-25,Conjunto ,2.0,10.0,Ganada,20.0,
+10,2026-03-28,Conjunto ,2.0,10.0,Ganada,20.0,
+11,2026-03-29,Conjunto ,2.0,5.0,Ganada,10.0,
+12,2026-03-30,Conjunto ,2.0,5.0,Ganada,10.0,
+13,2026-03-31,Conjunto ,2.0,5.0,Ganada,10.0,
+14,2026-04-01,Conjunto ,2.0,5.0,Ganada,10.0,Bet365
+15,2026-04-01,Conjunto ,1.5,10.0,Perdida,0.0,
+16,2026-04-02,Conjunto ,2.0,5.0,Ganada,10.0,
+17,2026-04-02,Conjunto ,1.5,10.0,Perdida,0.0,
+18,2026-04-03,Conjunto ,10.0,10.0,Perdida,0.0,
+19,2026-04-04,Conjunto ,1.5,10.0,Perdida,0.0,
+20,2026-04-05,Combi,1.56,5.0,Ganada,7.8,
+21,2026-04-06,Girona - Villareal ,2.0,5.0,Perdida,0.0,
+22,2026-04-07,Alcaraz y Sinner ,1.55,2.8,Ganada,4.34,Winamax
+23,2026-04-07,Bublik,1.54,1.34,Ganada,2.06,Winamax
+24,2026-04-07,Baloncesto Madrid ,1.54,5.06,Perdida,0.0,Winamax
+25,2026-04-07,Decisivos,1.6,5.0,Ganada,8.0,Winamax
+26,2026-04-08,Triples Tenis,1.66,3.0,Perdida,0.0,Winamax
+27,2026-04-08,PSG,1.78,3.03,Pendiente,0.0,Winamax
+28,2026-04-08,No marcan,Bet365,2.62,10.00,Ganada,26.20
+29,2026-04-08,resultado psg,Winamax,1.78,3.03,Ganada,5.39
+30,2026-04-08,ambos marcam,Winamax,2.00,10.00,Perdida,0.00
+31,2026-04-08,psg insider,Bet365,6.85,1.00,Perdida,0.00
+32,2026-04-08,barcelona wina,N/A,2.50,2.00,Perdida,0.00
+33,2026-04-08,PSG y Madrid,N/A,10.12,1.00,Cashout,5.10
