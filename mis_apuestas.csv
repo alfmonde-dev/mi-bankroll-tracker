@@ -25,10 +25,9 @@ ID,Fecha,Evento,Cuota,Inversion,Estado,Retorno,Casa
 24,2026-04-07,Baloncesto Madrid ,1.54,5.06,Perdida,0.0,Winamax
 25,2026-04-07,Decisivos,1.6,5.0,Ganada,8.0,Winamax
 26,2026-04-08,Triples Tenis,1.66,3.0,Perdida,0.0,Winamax
-27,2026-04-08,PSG,1.78,3.03,Pendiente,0.0,Winamax
-28,2026-04-08,No marcan,Bet365,2.62,10.00,Ganada,26.20
-29,2026-04-08,resultado psg,Winamax,1.78,3.03,Ganada,5.39
-30,2026-04-08,ambos marcam,Winamax,2.00,10.00,Perdida,0.00
-31,2026-04-08,psg insider,Bet365,6.85,1.00,Perdida,0.00
-32,2026-04-08,barcelona wina,N/A,2.50,2.00,Perdida,0.00
-33,2026-04-08,PSG y Madrid,N/A,10.12,1.00,Cashout,5.10
+27,2026-04-08,No marcan,2.62,10.00,Ganada,26.20,Bet365
+28,2026-04-08,resultado psg,1.78,3.03,Ganada,5.39,Winamax
+29,2026-04-08,ambos marcam,2.00,10.00,Perdida,0.00,Winamax
+30,2026-04-08,psg insider,6.85,1.00,Perdida,0.00,Bet365
+31,2026-04-08,barcelona wina,2.50,2.00,Perdida,0.00,N/A
+32,2026-04-08,PSG y Madrid,10.12,1.00,Cashout,5.10,N/A
