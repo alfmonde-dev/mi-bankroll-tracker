@@ -126,8 +126,19 @@ with col_der:
                 mode='lines+markers', line=dict(color='#2ad29a', width=3, shape='spline'),
                 fill='tozeroy', fillcolor='rgba(42, 210, 154, 0.1)'
             ))
-            fig.update_layout(template="plotly_dark", height=350, margin=dict(l=0,r=0,t=20,b=0))
-            st.plotly_chart(fig, use_container_width=True)
+            
+            # ---> AQUÍ ESTÁ EL CAMBIO PARA BLOQUEAR EL ZOOM <---
+            fig.update_layout(
+                template="plotly_dark", 
+                height=350, 
+                margin=dict(l=0,r=0,t=20,b=0),
+                xaxis=dict(fixedrange=True), # Bloquea el eje X
+                yaxis=dict(fixedrange=True), # Bloquea el eje Y
+                dragmode=False # Evita que se pueda arrastrar el fondo
+            )
+            
+            # El parámetro config={'displayModeBar': False} quita los botones de arriba a la derecha
+            st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
 
             # --- MÉTRICAS (Añadido Nº Apuestas) ---
             m1, m2, m3 = st.columns(3)
