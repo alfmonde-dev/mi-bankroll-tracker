@@ -120,8 +120,7 @@ with col_der:
             datos_grafica['Eje_X'] = range(1, len(datos_grafica) + 1) 
             datos_grafica['Acumulado'] = datos_grafica['Beneficio_Neto'].cumsum()
 
-            # ---> AQUÍ ESTÁN LOS CAMBIOS PARA EMPEZAR EN 0 Y CURVAR MÁS <---
-            # Insertamos un 0 al principio de los ejes X e Y para que nazca de la base
+            # Empezar en 0 y curvar
             x_vals = [0] + list(datos_grafica['Eje_X'])
             y_vals = [0.0] + list(datos_grafica['Acumulado'])
 
@@ -130,13 +129,12 @@ with col_der:
                 x=x_vals, 
                 y=y_vals,
                 mode='lines+markers', 
-                # Añadido smoothing=1.3 para forzar una curva mucho más suave
                 line=dict(color='#2ad29a', width=3, shape='spline', smoothing=1.3),
                 fill='tozeroy', 
                 fillcolor='rgba(42, 210, 154, 0.1)'
             ))
             
-            # Mantenemos los bloqueos para que no se vuelva loca al tocarla
+            # Gráfica bloqueada para evitar zoom accidental
             fig.update_layout(
                 template="plotly_dark", 
                 height=350, 
@@ -199,7 +197,5 @@ with col_der:
             if c_no.button("❌ No"):
                 st.session_state.confirmar_borrado = None
                 st.rerun()
-    else:
-        st.warning("Añade y cierra alguna apuesta.")
     else:
         st.warning("Añade y cierra alguna apuesta.")
